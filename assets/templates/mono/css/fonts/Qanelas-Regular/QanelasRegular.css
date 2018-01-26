@@ -1,0 +1,9 @@
+﻿@font-face {
+    font-family: 'QanelasRegular';
+    src: url('fonts/QanelasRegular.eot');
+    src: url('fonts/QanelasRegular.eot') format('embedded-opentype'),
+         url('fonts/QanelasRegular.html') format('woff2'),
+         url('fonts/QanelasRegular-2.html') format('woff'),
+         url('fonts/QanelasRegular-3.html') format('truetype'),
+         url('fonts/QanelasRegular.svg') format('svg');
+}

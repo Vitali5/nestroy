@@ -1,0 +1,9 @@
+﻿@font-face {
+    font-family: 'QanelasLight';
+    src: url('fonts/QanelasLight.eot');
+    src: url('fonts/QanelasLight.eot') format('embedded-opentype'),
+         url('fonts/QanelasLight.html') format('woff2'),
+         url('fonts/QanelasLight-2.html') format('woff'),
+         url('fonts/QanelasLight-3.html') format('truetype'),
+         url('fonts/QanelasLight.svg') format('svg');
+}
