@@ -141,7 +141,6 @@
                 $next.addClass('da-slide-current');
 
             }
-            console.log('first');
             // fallback
             if (!this.cssAnimations || !this.cssAnimations) {
                 $next.addClass('da-slide-current');
@@ -263,11 +262,9 @@
                 if (!this.options.bgincrement) {
 
                     this.$el.on('webkitAnimationEnd.cslider animationend.cslider OAnimationEnd.cslider', function (event) {
-                        console.log(event)
                         if (event.originalEvent.animationName === 'fromLeftAnim1' || event.originalEvent.animationName === 'fromRightAnim1') {
 
                             _self.isAnimating = false;
-                            console.log('_loadEvents1')
                         }
 
                     });
@@ -278,7 +275,6 @@
 
                         if (event.target.id === _self.$el.attr('id'))
                             _self.isAnimating = false;
-                             console.log('_loadEvents2')
 
                     });
 
