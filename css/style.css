@@ -1033,11 +1033,24 @@ ul#gifts_list li{
     position: relative;
 }
 
+#contactForm .panel textarea{
+    width: 50%;
+    resize: none;
+}
+#contactForm .panel textarea,
 #contactForm .panel input {
     border: none;
     border-radius: 1px;
     box-shadow: 1px 1px 5px #417a4d;
 }
+
+#contactForm .panel input:focus,
+#contactForm .panel textarea:focus {
+    border: none;
+    border-radius: 1px;
+    box-shadow: 1px 1px 10px #417a4d;
+}
+
 
 #contact .title a {
     color: #366c4b;
