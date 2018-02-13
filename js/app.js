@@ -441,4 +441,4 @@ function sendRequest(event) {
     setTimeout(toggleContent, 3000)
 }
 
-$('#contactForm').submit(sendRequest);
+$('#submitForm').submit(sendRequest);
