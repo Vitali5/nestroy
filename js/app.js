@@ -425,7 +425,7 @@ function sendRequest(event) {
     var data = new FormData(this);
     $.ajax({
         type: 'post',
-        url: this.url,
+        url: this.action,
         data: data,
         processData: false,
         contentType: false,
