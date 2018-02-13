@@ -384,34 +384,61 @@ $("#send-mail").click(function () {
 
 //Initialize google map for contact setion with your location.
 
-function initializeMap() {
+// function initializeMap() {
+//
+//     var lat = '53.910402'; //Set your latitude.
+//     var lon = '87.129202'; //Set your longitude.
+//
+//     var centerLon = lon - 0.0105;
+//
+//     var myOptions = {
+//         scrollwheel: false,
+//         draggable: false,
+//         disableDefaultUI: true,
+//         center: new google.maps.LatLng(lat, centerLon),
+//         zoom: 15,
+//         mapTypeId: google.maps.MapTypeId.ROADMAP
+//     };
+//
+//     //Bind map to elemet with id map-canvas
+//     var map = new google.maps.Map(document.getElementById('map-canvas'), myOptions);
+//     var marker = new google.maps.Marker({
+//         map: map,
+//         position: new google.maps.LatLng(lat, lon)
+//     });
+//
+//     var infowindow = new google.maps.InfoWindow();
+//
+//     google.maps.event.addListener(marker, 'click', function () {
+//         infowindow.open(map, marker);
+//     });
+// }
 
-    var lat = '53.910402'; //Set your latitude.
-    var lon = '87.129202'; //Set your longitude.
 
-    var centerLon = lon - 0.0105;
-
-    var myOptions = {
-        scrollwheel: false,
-        draggable: false,
-        disableDefaultUI: true,
-        center: new google.maps.LatLng(lat, centerLon),
-        zoom: 15,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-
-    //Bind map to elemet with id map-canvas
-    var map = new google.maps.Map(document.getElementById('map-canvas'), myOptions);
-    var marker = new google.maps.Marker({
-        map: map,
-        position: new google.maps.LatLng(lat, lon)
-    });
-
-    var infowindow = new google.maps.InfoWindow();
-
-    google.maps.event.addListener(marker, 'click', function () {
-        infowindow.open(map, marker);
-    });
-
-    /*infowindow.open(map, marker);*/
+function toggleContent() {
+    $('#panel').toggle('slow');
+    $('#panelSuccess').toggle('slow');
 }
+
+function sendRequest(event) {
+    event.preventDefault();
+    var data = new FormData(this);
+    $.ajax({
+        type: 'post',
+        url: this.url,
+        data: data,
+        processData: false,
+        contentType: false,
+        crossDomain: true,
+        success: function (data) {
+            console.log(data)
+        },
+        error: function (data) {
+            console.log(data)
+        }
+    });
+    toggleContent();
+    setTimeout(toggleContent, 3000)
+}
+
+$('#contactForm').submit(sendRequest);
